@@ -3,7 +3,8 @@ require 'sinatra/reloader'
 
 get '/' do
   phrase = params['phrase']
-  encrypted = caesar_cipher(phrase, 1) if phrase
+  value = params['value'].to_i
+  encrypted = caesar_cipher(phrase, value) if phrase && value
   erb :index, :locals => {:encrypted => encrypted}
 end
 

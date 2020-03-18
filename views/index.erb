@@ -1,13 +1,17 @@
 <html>
   <head></head>
   <body>
-    <form>
-      <input type='text' name = 'phrase' />
-      <input type='submit' value = 'Cipher!' />
-    </form>
-
     <p>
-      <%= encrypted unless encrypted.to_s.empty?%>
+      Enter a word or phrase to be ciphered and the number of times to shift by.<br>
+      Negative numbers can unshift a ciphered phrase.
     </p>
+    <form>
+      <label for='phrase'>Phrase:</label>
+      <input type='text' name='phrase' value='caesar'/>
+      <label for='value'>Number:</label>
+      <input type='text' name='value' value='1' style='width:30' />
+      <input type='submit' value='Cipher!' />
+    </form>
+    <p><%= encrypted unless encrypted.to_s.empty?%></p>
   <body>
 </html>
